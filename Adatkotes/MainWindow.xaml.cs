@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json;
+using System.Text.Unicode;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -53,7 +57,13 @@ namespace Adatkotes
 
         private void mnuMentés_Click(object sender, RoutedEventArgs e)
         {
-
+            var options1 = new JsonSerializerOptions
+            {
+                Encoder=JavaScriptEncoder.Create(UnicodeRanges.All),
+                WriteIndented = true
+            };
+            string json = JsonSerializer.Serialize(feladatok);
+            File.WriteAllText("feladatok.json", json);
         }
     }
 }

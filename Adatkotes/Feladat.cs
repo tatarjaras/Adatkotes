@@ -13,5 +13,12 @@ namespace Adatkotes
         public DateTime Hatarido { get; set; }
         public bool Kesz { get; set;}
         public int Prioritas { get;set; }
+        public bool Keso 
+        {
+            get
+            {
+                return Hatarido < DateTime.Now;
+            }
+        }
     }
 }

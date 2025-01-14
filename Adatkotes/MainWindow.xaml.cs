@@ -73,5 +73,21 @@ namespace Adatkotes
 
             File.WriteAllText("feladatok.json", json);
         }
+
+        private void mnuKeso_Click(object sender, RoutedEventArgs e)
+        {
+            var options1 = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+                WriteIndented = true
+            };
+            if (chbKesz.IsEnabled )
+            {
+
+            }
+            string json = JsonSerializer.Serialize(feladatok, options1);
+
+            File.WriteAllText("feladatok.json", json);
+        }
     }
 }

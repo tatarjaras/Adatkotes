@@ -81,13 +81,10 @@ namespace Adatkotes
                 Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
                 WriteIndented = true
             };
-            if (chbKesz.IsEnabled )
-            {
 
-            }
-            string json = JsonSerializer.Serialize(feladatok, options1);
-
-            File.WriteAllText("feladatok.json", json);
+                string json = JsonSerializer.Serialize(feladatok.FindAll(f=>f.Keso), options1);
+                File.WriteAllText("Kesok.json", json);
+            
         }
     }
 }

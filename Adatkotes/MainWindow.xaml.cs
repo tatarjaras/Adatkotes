@@ -22,6 +22,11 @@ namespace Adatkotes
         {
             InitializeComponent();
             dgrFeladatok.ItemsSource = feladatok;
+            current.FeladatId = feladatok.Count+1;
+            current.Leiras = "Új feladat";
+            current.Hatarido = DateTime.Now;
+            current.Kesz = false;
+            current.Prioritas = 1;
             spCurrent.DataContext = current;
         }
 

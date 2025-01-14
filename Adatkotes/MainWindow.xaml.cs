@@ -16,17 +16,13 @@ namespace Adatkotes
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Feladat> feladatok = new List<Feladat>();
-        Feladat current = new();
+        static List<Feladat> feladatok = new List<Feladat>();
+        static Feladat current = new();
         public MainWindow()
         {
             InitializeComponent();
             dgrFeladatok.ItemsSource = feladatok;
-            current.FeladatId = feladatok.Count+1;
-            current.Leiras = "Új feladat";
-            current.Hatarido = DateTime.Now;
-            current.Kesz = false;
-            current.Prioritas = 1;
+            SetNewCurrent();
             spCurrent.DataContext = current;
         }
 
@@ -34,6 +30,15 @@ namespace Adatkotes
         {
 
 
+        }
+        private static void SetNewCurrent()
+        {
+            current.FeladatId = feladatok.Count + 1;
+            current.Leiras = "Új feladat";
+            current.Hatarido = DateTime.Now;
+            current.Kesz = false;
+            current.Prioritas = 1;
+           
         }
     }
 }

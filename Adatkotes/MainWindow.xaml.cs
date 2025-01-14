@@ -54,7 +54,8 @@ namespace Adatkotes
         {
             string json = File.ReadAllText("feladatok.json");
             feladatok = JsonSerializer.Deserialize<List<Feladat>>(json);
-
+            dgrFeladatok.ItemsSource = feladatok;
+            dgrFeladatok.Items.Refresh();
         }
 
         private void mnuMentés_Click(object sender, RoutedEventArgs e)

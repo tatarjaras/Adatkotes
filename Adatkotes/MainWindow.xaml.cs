@@ -32,6 +32,7 @@ namespace Adatkotes
             feladatok.Add(current);
             current = new();
             SetNewCurrent();
+            spCurrent.DataContext= current;
             dgrFeladatok.Items.Refresh();
 
         }

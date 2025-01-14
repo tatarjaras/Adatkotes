@@ -22,13 +22,17 @@ namespace Adatkotes
         {
             InitializeComponent();
             dgrFeladatok.ItemsSource = feladatok;
-            SetNewCurrent();
+            SetNewCurrent(); 
             spCurrent.DataContext = current;
+            
         }
 
         private void btnHozzaad_Click(object sender, RoutedEventArgs e)
         {
-
+            feladatok.Add(current);
+            current = new();
+            SetNewCurrent();
+            dgrFeladatok.Items.Refresh();
 
         }
         private static void SetNewCurrent()

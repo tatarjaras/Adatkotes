@@ -22,6 +22,7 @@ namespace Adatkotes
         {
             InitializeComponent();
             dgrFeladatok.ItemsSource = feladatok;
+            spCurrent.DataContext = current;
         }
 
         private void btnHozzaad_Click(object sender, RoutedEventArgs e)

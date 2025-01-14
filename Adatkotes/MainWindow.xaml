@@ -20,7 +20,7 @@
             <MenuItem Header="Beolvasás"/>
             <MenuItem Header="Mentés"/>
         </Menu>
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="1" Name="spCurrent">
             <Label Content="Id"/>
             <TextBox x:Name="tbxId" Text="{Binding FeladatId}"/>
             <Label Content="Leirás"/>

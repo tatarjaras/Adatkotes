@@ -54,6 +54,10 @@ namespace Adatkotes
         {
             string json = File.ReadAllText("feladatok.json");
             feladatok = JsonSerializer.Deserialize<List<Feladat>>(json);
+            current = new();
+            SetNewCurrent();
+            spCurrent.DataContext = current;
+            dgrFeladatok.Items.Refresh();
             dgrFeladatok.ItemsSource = feladatok;
             dgrFeladatok.Items.Refresh();
         }

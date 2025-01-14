@@ -53,6 +53,8 @@ namespace Adatkotes
         private void mnuBeolvasás_Click(object sender, RoutedEventArgs e)
         {
             string json = File.ReadAllText("feladatok.json");
+            feladatok = JsonSerializer.Deserialize<List<Feladat>>(json);
+
         }
 
         private void mnuMentés_Click(object sender, RoutedEventArgs e)

@@ -17,6 +17,7 @@ namespace Adatkotes
     public partial class MainWindow : Window
     {
         List<Feladat> feladatok = new List<Feladat>();
+        Feladat current = new();
         public MainWindow()
         {
             InitializeComponent();

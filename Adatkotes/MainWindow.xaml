@@ -22,14 +22,14 @@
         </Menu>
         <StackPanel Grid.Row="1">
             <Label Content="Id"/>
-            <TextBox x:Name="tbxId"/>
+            <TextBox x:Name="tbxId" Text="{Binding FeladatId}"/>
             <Label Content="Leirás"/>
-            <TextBox x:Name="tbxLeiras"/>
+            <TextBox x:Name="tbxLeiras" Text="{Binding Leiras}"/>
             <Label Content="Határidő"/>
-            <DatePickerTextBox x:Name="dtbxHatarido"/>
-            <CheckBox x:Name="chbKesz" Content="Kész"/>
+            <DatePickerTextBox x:Name="dtbxHatarido" Text="{Binding Hatarido}"/>
+            <CheckBox x:Name="chbKesz" Content="Kész" IsChecked="{Binding Kesz}"/>
             <Label Content="Prioritás"/>
-            <TextBox x:Name="tbxPriotitas"/>
+            <TextBox x:Name="tbxPriotitas" Text="{Binding Prioritas}"/>
             <Button x:Name="btnHozzaad" Click="btnHozzaad_Click" Content="Hozzáad"/>
         </StackPanel>
 

@@ -45,5 +45,15 @@ namespace Adatkotes
             current.Prioritas = 1;
            
         }
+ 
+        private void mnuBeolvasás_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void mnuMentés_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

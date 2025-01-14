@@ -17,8 +17,8 @@
         </Grid.ColumnDefinitions>
 
         <Menu Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="20">
-            <MenuItem Header="Beolvasás"/>
-            <MenuItem Header="Mentés"/>
+            <MenuItem Header="Beolvasás" Name="mnuBeolvasás" Click="mnuBeolvasás_Click"/>
+            <MenuItem Header="Mentés" Name="mnuMentés" Click="mnuMentés_Click"/>
         </Menu>
         <StackPanel Grid.Row="1" Name="spCurrent">
             <Label Content="Id"/>

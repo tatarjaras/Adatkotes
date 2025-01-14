@@ -52,7 +52,7 @@ namespace Adatkotes
  
         private void mnuBeolvasás_Click(object sender, RoutedEventArgs e)
         {
-
+            string json = File.ReadAllText("feladatok.json");
         }
 
         private void mnuMentés_Click(object sender, RoutedEventArgs e)
@@ -62,7 +62,8 @@ namespace Adatkotes
                 Encoder=JavaScriptEncoder.Create(UnicodeRanges.All),
                 WriteIndented = true
             };
-            string json = JsonSerializer.Serialize(feladatok);
+            string json = JsonSerializer.Serialize(feladatok,options1);
+
             File.WriteAllText("feladatok.json", json);
         }
     }

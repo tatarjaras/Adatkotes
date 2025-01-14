@@ -1,0 +1,46 @@
+﻿<Window x:Class="Adatkotes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Adatkotes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="20">
+            <MenuItem Header="Beolvasás"/>
+            <MenuItem Header="Mentés"/>
+        </Menu>
+        <StackPanel Grid.Row="1">
+            <Label Content="Id"/>
+            <TextBox x:Name="tbxId"/>
+            <Label Content="Leirás"/>
+            <TextBox x:Name="tbxLeiras"/>
+            <Label Content="Határidő"/>
+            <DatePickerTextBox x:Name="dtbxHatarido"/>
+            <CheckBox x:Name="chbKesz" Content="Kész"/>
+            <Label Content="Prioritás"/>
+            <TextBox x:Name="tbxPriotitas"/>
+            <Button x:Name="btnHozzaad" Click="btnHozzaad_Click" Content="Hozzáad"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" Grid.Column="1" x:Name="dgrFeladatok" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding FeladatId}"/>
+                <DataGridTextColumn Header="Leirás" Binding="{Binding Leiras}"/>
+                <DataGridTextColumn Header="Határidő" Binding="{Binding Hatarido}"/>
+                <DataGridCheckBoxColumn Header="Kész" Binding="{Binding Kesz}"/>
+                <DataGridTextColumn Header="Prioritás" Binding="{Binding Prioritas}"/>
+            </DataGrid.Columns></DataGrid>
+
+    </Grid>
+</Window>
